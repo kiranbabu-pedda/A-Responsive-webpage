@@ -7,7 +7,7 @@ This is a Django-based project that creates a responsive webpage with the follow
 
 Setup Instructions:
 1. Clone the repository:
-   git clone https://github.com/your-username/responsive-django-webpage.git
+   git clone https://github.com/kiranbabu-pedda/A-Responsive-webpage
    cd responsive-django-webpage
 
 2. Create a virtual environment:
