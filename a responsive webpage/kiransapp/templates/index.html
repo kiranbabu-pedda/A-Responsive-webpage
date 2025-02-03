@@ -5,19 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive Webpage</title>
     <style>
-        /* General body styling */
+       
         body {
             margin: 0;
             font-family: Arial, sans-serif;
             display: flex;
             flex-direction: column;
-            min-height: 100vh; /* Ensure body takes full height */
-            transition: transform 0.3s ease; /* Smooth transform transition */
+            min-height: 100vh; 
+            transition: transform 0.3s ease; 
         }
 
-        /* Navbar */
+ 
         nav {
-            background-color: #343a40;
+            background-color: black;
             color: white;
             padding: 15px;
             position: sticky;
@@ -32,17 +32,17 @@
             margin: 0 15px;
         }
 
-        /* Main content layout */
+        
         .content {
             display: flex;
-            flex: 1; /* This makes the content area grow to take available space */
-            margin-top: 60px; /* To account for fixed navbar */
+            flex: 1; 
+            margin-top: 60px; 
         }
 
-        /* Left Menu */
+        
         .left-menu {
             width: 250px;
-            background-color: #f8f9fa;
+            background-color: pink;
             padding: 15px;
             transition: width 0.3s ease;
             display: block;
@@ -62,29 +62,29 @@
             padding: 8px 0;
         }
 
-        /* Main Content */
+        
         .main-content {
             width: 100%;
             padding: 15px;
-            background-color: #fff;
+            background-color: white;
         }
 
         .right-panel {
             width: 20%;
-            background-color: #f8f9fa;
+            background-color: green;
             padding: 15px;
         }
 
-        /* Footer */
+        
         .footer {
-            background-color: #343a40;
+            background-color: black;
             color: white;
             padding: 10px;
             text-align: center;
-            margin-top: auto; /* Push footer to bottom */
+            margin-top: auto; 
         }
 
-        /* Toggle Button for Collapsing Menu */
+        
         #menu-toggle {
             display: block;
             position: absolute;
@@ -95,7 +95,7 @@
             z-index: 1001;
             
         }
-                /* Sign Up Button */
+               
                 .signup-btn {
             display: inline-block;
             padding: 10px 20px;
@@ -115,17 +115,17 @@
 </head>
 <body>
 
-    <!-- Navbar -->
+    
     <nav>
     
     </nav>
 
-    <!-- Menu Toggle Button (Visible on all screens now) -->
+    
     <span id="menu-toggle">☰</span>
 
     <!-- Main Content -->
     <div class="content">
-        <!-- Left Menu (Initially visible) -->
+        
         <div class="left-menu" id="leftMenu">
             <h4>Left Menu</h4>
             <ul>
@@ -137,7 +137,7 @@
             </ul>
         </div>
 
-        <!-- Main Content Area -->
+        
         <div class="main-content">
             <h2>Main Content Area</h2>
             <p>Some main content goes here.</p>
@@ -151,26 +151,26 @@
             <a href="{% url 'signup' %}" class="signup-btn">Sign Up</a>
         </div>
 
-        <!-- Right Panel -->
+       
         <div class="right-panel">
             <h4>Right Panel</h4>
             <p>Some side information.</p>
         </div>
     </div>
 
-    <!-- Footer -->
+   
     <div class="footer">
         
     </div>
 
     <script>
-        // Function to toggle the left menu visibility
+        
         document.getElementById('menu-toggle').addEventListener('click', function () {
             const leftMenu = document.getElementById('leftMenu');
             leftMenu.classList.toggle('collapsed');
         });
 
-        // JavaScript to handle screen size changes and shrinking the page width
+        
         function adjustPageSize() {
             const width = window.innerWidth;
             let scaleValue;
@@ -188,18 +188,18 @@
                 scaleValue = 1; // Default, 100% size
             }
 
-            // Apply the scale transformation to the body
+            
             document.body.style.transform = `scale(${scaleValue})`;
             document.body.style.transformOrigin = 'top'; // Keeps the scale from the top of the page
         }
         
-        // Listen for window resize events to adjust page size and menu visibility dynamically
+        
         window.addEventListener('resize', function() {
             adjustPageSize();
             adjustMenuVisibility();
         });
         
-        // Call the functions on page load to set the initial layout
+        
         window.addEventListener('load', function() {
             adjustPageSize();
             adjustMenuVisibility();
