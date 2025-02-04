@@ -17,19 +17,15 @@ def signup(request):
                 email = form.cleaned_data['email']
                 password = form.cleaned_data['password']
 
-                # Hash the password before saving
                 hashed_password = make_password(password)
 
-                # Create the new user
                 user = CustomUser(username=username, email=email, password=hashed_password)
                 user.save()
 
                 request.session['username'] = user.username
 
-                # Add success message
                 messages.success(request, f'Welcome {username}, you have successfully signed up!')
 
-                # Redirect to index page
                 return redirect('index')
             else:
                 print(form.errors)
